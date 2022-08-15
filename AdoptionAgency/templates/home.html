@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Pet List</title>
+</head>
+
+<body>
+    <section class="container">
+        <h1 class="has-text-weight-bold is-size-2">Pets List</h1>
+
+        <div class="card">
+            <div class="card-content">
+                {% for pet in pets %}
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-64x64">
+                            <img src="{{pet.photo_url}}" alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="title is-4"><a href="/pet_profile/{{pet.id}}">{{pet.name}}</a></p>
+                        <p>{{pet.get_availability}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+    </section>
+    <section class="container">
+        <form action="/add">
+            <button>Add a pet</button>
+        </form>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>{{pet.name}}'s profile</title>
+</head>
+
+<body>
+    <h1 class="has-text-weight-bold is-size-2">{{pet.name}} Details</h1>
+    <div class="card">
+        <div class="card-content">
+            <div class="media">
+                <div class="media-left">
+                    <figure class="image is-64x64">
+                        <img src="{{pet.photo_url}}" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="media-content">
+                    <ul>
+                        <li>Name: {{pet.name}}</li>
+                        <li>Species: {{pet.species}}</li>
+                        <li>Age: {{pet.age}}</li>
+                        <li>Notes: {{pet.notes}}</li>
+                    </ul>
+                    <form action="/pet_edit/{{pet.id}}">
+                        <button class="button is-light is-info">Edit</button>
+                    </form>
+                </div>
+            </div>
+
+</body>
+
+</html>
